@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Quiz Biblique – Testez vos connaissances de la Bible</title>
+  <meta name="description" content="Testez vos connaissances de la Bible avec notre quiz biblique gratuit ! Questions sur l'Ancien et le Nouveau Testament. Jouez maintenant !" />
+  <meta name="keywords" content="quiz biblique, quiz bible, questions bible, christianisme, foi, ancien testament, nouveau testament" />
+  <meta name="author" content="Quiz Biblique" />
+
+  <!-- Open Graph (partage réseaux sociaux) -->
+  <meta property="og:title"       content="Quiz Biblique – Testez vos connaissances de la Bible" />
+  <meta property="og:description" content="Questions sur l'Ancien et le Nouveau Testament. Jouez gratuitement !" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://emerson985.github.io/quiz-biblique/" />
+  <meta property="og:image"       content="https://emerson985.github.io/quiz-biblique/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Quiz Biblique" />
+  <meta name="twitter:description" content="Testez vos connaissances bibliques !" />
+
+  <!-- Favicon (emoji via SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
+
+  <!-- ================================================================
+       GOOGLE ADSENSE
+       ➜ Remplacez « ca-pub-XXXXXXXXXXXXXXXX » par votre vrai ID éditeur
+          après avoir créé un compte sur https://adsense.google.com
+       ================================================================ -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Top Banner Ad (728×90 Leaderboard) ─────────────────────── -->
+  <div class="ad-banner">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ── Main three-column layout ───────────────────────────────── -->
+  <div class="page-layout">
+
+    <!-- Left sidebar ad (300×600) -->
+    <aside class="ad-sidebar">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="2222222222"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+    <!-- ── Game card ─────────────────────────────────────────────── -->
+    <main class="game-container">
+
+      <!-- Header -->
+      <header class="game-header">
+        <h1>📖 Quiz Biblique</h1>
+        <p class="subtitle">Testez vos connaissances de la Parole de Dieu</p>
+      </header>
+
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="progressText">Question 1 / 15</span>
+          <span id="scoreDisplay" class="score-badge">⭐ Score : 0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Game area (question + options) -->
+      <div id="gameArea">
+        <div class="question-area">
+          <div>
+            <span class="category-tag" id="categoryTag">Catégorie</span>
+          </div>
+          <p class="question-number" id="questionNum">Question 1</p>
+          <p class="question-text"  id="questionText">Chargement…</p>
+        </div>
+
+        <div class="options-grid" id="optionsGrid"></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <!-- Mid-game ad (shown after every 5 questions via JS) -->
+        <div class="mid-ad" id="midAd" style="display:none;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="3333333333"
+               data-ad-format="rectangle"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <button class="btn-next" id="btnNext" disabled>Question suivante →</button>
+      </div>
+
+      <!-- Results screen -->
+      <div class="results-screen" id="resultsScreen">
+        <div class="trophy" id="resEmoji">🏆</div>
+        <h2 class="result-title"   id="resTitle">Résultats</h2>
+        <div class="result-score"  id="resScore">0 / 15</div>
+        <p class="result-message"  id="resMessage"></p>
+
+        <div class="result-details">
+          <div class="result-stat">
+            <div class="result-stat-value" id="resPct">0%</div>
+            <div class="result-stat-label">Réussite</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-value" id="resCorrect">0</div>
+            <div class="result-stat-label">Correctes</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-value" id="resTotal">15</div>
+            <div class="result-stat-label">Total</div>
+          </div>
+        </div>
+
+        <!-- Results ad (300×250 Rectangle) -->
+        <div style="margin-bottom:24px;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="4444444444"
+               data-ad-format="rectangle"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div>
+          <button class="btn-restart" id="btnRestart">🔄 Rejouer</button>
+          <a class="btn-share" id="shareBtn" href="#" target="_blank" rel="noopener noreferrer">
+            📲 Partager sur WhatsApp
+          </a>
+        </div>
+      </div>
+    </main>
+    <!-- ── End game card ─────────────────────────────────────────── -->
+
+    <!-- Right sidebar ad (300×600) -->
+    <aside class="ad-sidebar">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="5555555555"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+  </div><!-- end page-layout -->
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Quiz Biblique &mdash; Tous droits réservés &mdash;
+       <a href="mailto:contact@quiz-biblique.com">Contact</a></p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <!-- Game scripts -->
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
